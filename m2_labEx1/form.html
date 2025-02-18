@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <!-- works like <a href="/index.html">Home</a> -->
+      <a href="./index.html">Home</a>
+    </nav>
+  </header>
+
+  <!--VI. HTML elements - Forms - form, input, label, select, option, button-->
+  <form id="myForm" method="POST" action="http://localhost:3000/profile">
+    <div>
+      <lable for="firstName">First Name:</lable>
+      <input type="text" id="firstName" name="firstName">
+    </div>
+    <div>
+      <lable for="lastName">Last Name:</lable>
+      <input type="text" id="lastName" name="lastName">      
+    </div>
+
+    <div>
+      <label>What is your favorite coding language:</label>
+      <input type="radio" id="html" name="codeLang" value="HTML">
+      <label for="html">HTML</label>
+      <input type="radio" id="css" name="codeLang" value="CSS">
+      <label for="css">CSS</label>
+      <input type="radio" id="js" name="codeLang" value="JavaScript">
+      <label for="js">JavaScript</label>
+    </div>
+
+    <div>
+      <label>What type of vehicle do you own:</label>
+      <input type="checkbox" id="car" name="vehicle" value="Car">
+      <lable for="car">Car<lable>
+      <input type="checkbox" id="byke" name="vehicle" value="Bycicle">
+      <lable for="byke">Bycicle<lable>
+      <input type="checkbox" id="bolt" name="vehicle" value="Bolt">
+      <lable for="bolt">Bolt</lable>
+    </div>
+
+    <div>
+      <label for="carBrand">In case you own a car, what is its brand:</label>
+      <select id="carBrand" name="carBrand">
+        <option value="BMW">BMW</option>
+        <option value="Toyota">Toyota</option>
+        <option value="Tesla">Tesla</option>
+      </select>
+    </div>
+
+    <button type="submit">Submit form</button>
+  </form>  
+
+  <main>
+  </main>
+
+  <footer>Copyright &copy; 2024</footer>
+</body>
+
+</html>
