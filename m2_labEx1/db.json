@@ -1,27 +1,21 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
       "author": "typicode"
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": "c3cc",
+      "firstName": "test 2",
+      "lastName": "Pereira",
+      "codeLang": "HTML",
+      "vehicle": [
+        "Car",
+        "Bycicle",
+        "Bolt"
+      ],
+      "carBrand": "BMW"
     }
-  ],
-  "profile": {
-    "firstName": "Dalmir",
-    "lastName": "Pereira",
-    "codeLang": "HTML",
-    "vehicle": [
-      "Car",
-      "Bycicle",
-      "Bolt"
-    ],
-    "carBrand": "BMW"
-  }
+  ]
 }

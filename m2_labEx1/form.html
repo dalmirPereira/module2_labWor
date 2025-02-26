@@ -13,13 +13,13 @@
   </header>
 
   <!--VI. HTML elements - Forms - form, input, label, select, option, button-->
-  <form id="myForm" method="POST" action="http://localhost:3000/profile">
+  <form id="myForm">
     <div>
-      <lable for="firstName">First Name:</lable>
+      <label for="firstName">First Name:</label>
       <input type="text" id="firstName" name="firstName">
     </div>
     <div>
-      <lable for="lastName">Last Name:</lable>
+      <label for="lastName">Last Name:</label>
       <input type="text" id="lastName" name="lastName">      
     </div>
 
@@ -36,11 +36,11 @@
     <div>
       <label>What type of vehicle do you own:</label>
       <input type="checkbox" id="car" name="vehicle" value="Car">
-      <lable for="car">Car<lable>
+      <label for="car">Car</label>
       <input type="checkbox" id="byke" name="vehicle" value="Bycicle">
-      <lable for="byke">Bycicle<lable>
+      <label for="byke">Bycicle</label>
       <input type="checkbox" id="bolt" name="vehicle" value="Bolt">
-      <lable for="bolt">Bolt</lable>
+      <label for="bolt">Bolt</label>
     </div>
 
     <div>
@@ -59,6 +59,54 @@
   </main>
 
   <footer>Copyright &copy; 2024</footer>
+
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Create a FormData object to collect all form fields
+      const formData = new FormData(myForm);
+      const formObject = {}
+
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      //fixing checkbox multiple values
+      const checkboxes = document.querySelectorAll('form input[type="checkbox"]');
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          const key = checkbox.name;
+          if (Array.isArray(formObject[key])) {
+            formObject[key].push(checkbox.value);
+          } else {
+            formObject[key] = [checkbox.value];
+          }
+        }
+      });
+
+      console.log(formObject); 
+
+      // Send the data as JSON 
+      fetch('http://localhost:3000/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject), 
+      })
+      .then(response => response.json()) //transfer the answer form the computer to a JSON
+      .then(data => { //get the data and write it
+        console.log('Form submitted successfully:', data);
+        alert('Form submitted successfully');
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+    });
+  </script>
 </body>
 
 </html>
