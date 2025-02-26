@@ -1,0 +1,224 @@
+/* General reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+/* ----- Header Style ----- */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0px;
+    margin: 5px;
+    background-color: brown;
+    border: 1px solid black;
+    text-align: center; /* responsive change */
+    height: auto;
+}
+section {
+    border: 1px solid black;
+}
+.header2 {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0 10px;
+}
+
+.img {
+    max-width: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    header {
+        display: block;
+    }
+
+    .header2 {
+        position: static; /* responsive change */
+        top: 0;
+        transform: none;
+        padding-bottom: 10px;
+    }
+}
+
+
+/* ----- Resume Parts ----- */
+.resume-parts {
+    margin: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .name {
+        font-size: 1.8rem; /* responsive change */
+    }
+}
+
+.professional-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .professional-title {
+        font-size: 1rem; /* responsive change */
+    }
+}
+
+.general-text {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .general-text {
+        font-size: 0.9rem; /* responsive change */
+    }
+}
+
+/* ----- Professional Summary ----- */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(239, 253, 244, 0.925);
+}
+
+/* ----- Professional Skills ----- */
+.skill-flex {
+    display: flex;
+    flex-direction: row; /* responsive change */
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .skill-flex {
+        flex-direction: column; /* responsive change */
+        padding: 10px; /* responsive change */
+        align-items: center; /* responsive change */
+    }
+}
+
+.skill1, .skill2 {
+    font-size: 1rem;
+}
+
+.skill1 {
+    font-weight: bold;
+    flex: 1;
+}
+
+.skill2 {
+    flex: 3;
+    text-align: left;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .skill1, .skill2 {
+        text-align: center; /* responsive change */
+    }
+}
+
+/* ----- Professional Experience ----- */
+.professional-flex {
+    display: flex;
+    padding: 5px 0;
+    flex-direction: row; /* responsive change */
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .professional-flex {
+        flex-direction: column; /* responsive change */
+        align-items: flex-start; /* responsive change */
+    }
+}
+
+.professional1 {
+    flex: 4;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+.professional2 {
+    flex: 1;
+}
+
+.professional-text, .professional-task {
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 50px;
+}
+
+/* responsive change */
+@media (max-width: 768px) {
+    .professional1, .professional2, .professional-text, .professional-task {
+        font-size: 0.9rem; /* responsive change */
+        margin-left: 0; /* responsive change */
+    }
+}
+
+/* ----- Responsive Styles for Mobile Devices ----- */
+@media (max-width: 480px) {
+    .name {
+        font-size: 1.5rem; /* responsive change */
+    }
+
+    .professional-title {
+        font-size: 0.9rem; /* responsive change */
+    }
+
+    .general-text {
+        font-size: 0.8rem; /* responsive change */
+    }
+
+    .skill1, .skill2 {
+        font-size: 0.9rem; /* responsive change */
+    }
+
+    .professional1, .professional2, .professional-text, .professional-task {
+        font-size: 0.8rem; /* responsive change */
+    }
+}
